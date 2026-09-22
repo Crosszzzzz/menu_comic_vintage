@@ -1,0 +1,15 @@
+import { chromium } from 'playwright'
+
+const browser = await chromium.launch()
+const page = await browser.newPage({ viewport: { width: 390, height: 844 } })
+await page.goto('http://localhost:4173', { waitUntil: 'networkidle' })
+await page.screenshot({ path: 'artifacts/new-menu-mobile-full.png', fullPage: true })
+await page.getByRole('button', { name: 'Explorar en 3D', exact: true }).click()
+await page.waitForFunction(() => document.querySelector('model-viewer')?.loaded, null, { timeout: 60000 })
+await page.waitForTimeout(800)
+await page.screenshot({ path: 'artifacts/new-viewer-mobile.png' })
+await page.evaluate(() => { document.querySelector('.dish-dialog').scrollTop = 9999 })
+await page.waitForTimeout(300)
+await page.screenshot({ path: 'artifacts/new-viewer-mobile-bottom.png' })
+await browser.close()
+console.log('OK viewer mobile shots')

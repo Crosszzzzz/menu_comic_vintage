@@ -1,0 +1,16 @@
+{
+  "source": "Hamburguesa_De_Huevo.obj",
+  "measurement": {
+    "widthCm": 12,
+    "approximateHeightCm": 6,
+    "uniformScale": true
+  },
+  "dimensionsMeters": {
+    "width": 0.12,
+    "height": 0.06471225726650803,
+    "depth": 0.12247242997250779
+  },
+  "triangles": 83300,
+  "bytes": 3263172,
+  "textureResolution": 2048
+}
