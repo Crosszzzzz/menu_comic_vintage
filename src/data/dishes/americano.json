@@ -1,0 +1,30 @@
+{
+  "id": "americano",
+  "name": "Americano",
+  "category": "Cafés",
+  "description": "Espresso largo con agua caliente. Cuerpo limpio y aroma a cacao.",
+  "ingredients": [
+    "Café",
+    "Agua"
+  ],
+  "price": 15,
+  "art": "cup",
+  "dimensions": {
+    "widthCm": 10,
+    "depthCm": 8.6,
+    "heightCm": 8.1
+  },
+  "allergenNote": "Sin alérgenos declarados.",
+  "poster": "/images/americano.webp",
+  "badge": "En 3D · AR",
+  "viewer": {
+    "model": "/models/americano/model.glb",
+    "ios": {
+      "assembled": "/models/americano/model.usdz"
+    },
+    "labels": {
+      "assembledCaption": "TU AMERICANO EN 360°"
+    },
+    "alt": "Americano servido en taza negra. Arrastra para girarlo y pellizca para acercarte."
+  }
+}

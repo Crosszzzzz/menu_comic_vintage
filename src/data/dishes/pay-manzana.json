@@ -1,0 +1,31 @@
+{
+  "id": "pay-manzana",
+  "name": "Pay de manzana",
+  "category": "Postres",
+  "description": "Manzana con canela entre masa quebrada y una costra dorada. Se sirve tibio.",
+  "ingredients": [
+    "Manzana",
+    "Masa quebrada",
+    "Canela"
+  ],
+  "price": 22,
+  "art": "pastry",
+  "dimensions": {
+    "widthCm": 11,
+    "depthCm": 9.1,
+    "heightCm": 4.3
+  },
+  "allergenNote": "Contiene gluten, lácteos y huevo. Puede contener trazas de frutos secos.",
+  "poster": "/images/pay-manzana.webp",
+  "badge": "En 3D · AR",
+  "viewer": {
+    "model": "/models/pay-manzana/model.glb",
+    "ios": {
+      "assembled": "/models/pay-manzana/model.usdz"
+    },
+    "labels": {
+      "assembledCaption": "TU PAY EN 360°"
+    },
+    "alt": "Porción de pay de manzana con costra dorada. Arrastra para girarlo y pellizca para acercarte."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "cafe-pasado",
+  "name": "Café pasado",
+  "category": "Cafés",
+  "description": "Café de filtro en taza grande. Suave, aromático y sin prisa.",
+  "ingredients": [
+    "Café",
+    "Agua"
+  ],
+  "price": 12,
+  "art": "cup",
+  "dimensions": {
+    "widthCm": 13,
+    "depthCm": 10.5,
+    "heightCm": 5.1
+  },
+  "allergenNote": "Sin alérgenos declarados.",
+  "poster": "/images/cafe-pasado.webp",
+  "badge": "En 3D · AR",
+  "viewer": {
+    "model": "/models/cafe-pasado/model.glb",
+    "ios": {
+      "assembled": "/models/cafe-pasado/model.usdz"
+    },
+    "labels": {
+      "assembledCaption": "TU CAFÉ EN 360°"
+    },
+    "alt": "Café pasado servido en taza blanca con plato. Arrastra para girarlo y pellizca para acercarte."
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "id": "egg-tomato",
+  "name": "Sándwich de huevo y tomate",
+  "category": "Salados",
+  "description": "Pan suave, huevo y tomate. Una combinación sencilla que siempre apetece.",
+  "ingredients": [
+    "Huevo",
+    "Tomate",
+    "Pan"
+  ],
+  "price": 28,
+  "art": "sandwich",
+  "poster": "/images/croissant.webp",
+  "badge": "En 3D · AR",
+  "dimensions": {
+    "widthCm": 12,
+    "depthCm": 8,
+    "heightCm": 6.1
+  },
+  "allergenNote": "Contiene huevo y pan. Consulta al personal sobre gluten, otros alérgenos y contaminación cruzada antes de pedir.",
+  "viewer": {
+    "model": "/models/test/assembly.glb",
+    "ios": {
+      "assembled": "/models/test/assembly.usdz",
+      "exploded": "/models/test/assembly-exploded.usdz"
+    },
+    "animation": {
+      "name": "Explode",
+      "transitionMs": 950
+    },
+    "camera": {
+      "assembled": {
+        "thetaDeg": 30,
+        "phiDeg": 72,
+        "radiusM": 0.3,
+        "targetM": [
+          0,
+          0.0304,
+          0
+        ]
+      },
+      "exploded": {
+        "thetaDeg": 30,
+        "phiDeg": 70,
+        "radiusM": 0.54,
+        "targetM": [
+          0,
+          0.083,
+          0
+        ]
+      },
+      "minRadiusM": 0.16,
+      "maxRadiusM": 1,
+      "fieldOfViewDeg": 30
+    },
+    "ingredients": [
+      {
+        "id": "top-bun",
+        "label": "Pan superior",
+        "description": "La tapa del pan: corteza dorada y una cara interior de miga suave.",
+        "materialPrefixes": [
+          "top-bun"
+        ]
+      },
+      {
+        "id": "tomato",
+        "label": "Tomate",
+        "description": "Dos rodajas de tomate, colocadas sobre el huevo. Aportan frescura al conjunto.",
+        "materialPrefixes": [
+          "tomato"
+        ]
+      },
+      {
+        "id": "egg",
+        "label": "Huevo",
+        "description": "Huevo frito con clara y yema, entre el pan y las rodajas de tomate.",
+        "materialPrefixes": [
+          "egg"
+        ]
+      },
+      {
+        "id": "bottom-bun",
+        "label": "Pan inferior",
+        "description": "La base del pan, con la cara de miga hacia arriba para sostener los ingredientes.",
+        "materialPrefixes": [
+          "bottom-bun"
+        ]
+      }
+    ],
+    "labels": {
+      "assembledCaption": "TU SÁNDWICH EN 360°",
+      "explodedCaption": "CADA INGREDIENTE, DE CERCA",
+      "assemble": "Reunir sándwich",
+      "explode": "Separar ingredientes"
+    },
+    "alt": "Sándwich de huevo con dos rodajas de tomate. Arrastra para girar, pellizca para acercarte y toca un ingrediente para conocerlo."
+  }
+}

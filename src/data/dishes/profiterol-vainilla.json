@@ -1,0 +1,31 @@
+{
+  "id": "profiterol-vainilla",
+  "name": "Profiterol de vainilla",
+  "category": "Postres",
+  "description": "Masa choux rellena de crema de vainilla, con chocolate y nuez.",
+  "ingredients": [
+    "Masa choux",
+    "Crema de vainilla",
+    "Chocolate"
+  ],
+  "price": 18,
+  "art": "pastry",
+  "dimensions": {
+    "widthCm": 8,
+    "depthCm": 8,
+    "heightCm": 6.1
+  },
+  "allergenNote": "Contiene gluten, lácteos, huevo y nuez.",
+  "poster": "/images/profiterol-vainilla.webp",
+  "badge": "En 3D · AR",
+  "viewer": {
+    "model": "/models/profiterol-vainilla/model.glb",
+    "ios": {
+      "assembled": "/models/profiterol-vainilla/model.usdz"
+    },
+    "labels": {
+      "assembledCaption": "TU PROFITEROL EN 360°"
+    },
+    "alt": "Profiterol relleno de crema de vainilla con chocolate y nuez. Arrastra para girarlo y pellizca para acercarte."
+  }
+}

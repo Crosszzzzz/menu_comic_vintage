@@ -1,0 +1,31 @@
+{
+  "id": "capuchino",
+  "name": "Capuchino",
+  "category": "Cafés",
+  "description": "Espresso y leche vaporizada con espuma cremosa. Dibujo en la taza.",
+  "ingredients": [
+    "Café",
+    "Leche",
+    "Espuma de leche"
+  ],
+  "price": 18,
+  "art": "latte",
+  "dimensions": {
+    "widthCm": 12,
+    "depthCm": 12,
+    "heightCm": 5.1
+  },
+  "allergenNote": "Contiene lácteos. Disponible con bebida vegetal; consulta por trazas.",
+  "poster": "/images/capuchino.webp",
+  "badge": "En 3D · AR",
+  "viewer": {
+    "model": "/models/capuchino/model.glb",
+    "ios": {
+      "assembled": "/models/capuchino/model.usdz"
+    },
+    "labels": {
+      "assembledCaption": "TU CAPUCHINO EN 360°"
+    },
+    "alt": "Capuchino con dibujo de latte art en una taza blanca con plato. Arrastra para girarlo y pellizca para acercarte."
+  }
+}

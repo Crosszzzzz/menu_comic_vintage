@@ -1,0 +1,31 @@
+{
+  "id": "torta-princesa",
+  "name": "Torta princesa",
+  "category": "Postres",
+  "description": "Mazapán verde, crema batida y frambuesa sobre bizcocho.",
+  "ingredients": [
+    "Mazapán",
+    "Crema batida",
+    "Frambuesa"
+  ],
+  "price": 28,
+  "art": "pastry",
+  "dimensions": {
+    "widthCm": 9,
+    "depthCm": 5.1,
+    "heightCm": 6.2
+  },
+  "allergenNote": "Contiene almendra, lácteos, huevo y gluten.",
+  "poster": "/images/torta-princesa.webp",
+  "badge": "En 3D · AR",
+  "viewer": {
+    "model": "/models/torta-princesa/model.glb",
+    "ios": {
+      "assembled": "/models/torta-princesa/model.usdz"
+    },
+    "labels": {
+      "assembledCaption": "TU TORTA EN 360°"
+    },
+    "alt": "Porción de torta princesa cubierta de mazapán verde. Arrastra para girarla y pellizca para acercarte."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "manifest": "src/data/dishes/egg-tomato.json",
+  "source": { "blend": "artifacts/blender/menu-before-closed.blend", "object": "burger", "texture": "artifacts/blender/source/Hamburguesa_De_Huevo/tex_u1_v1_diffuse.jpg" },
+  "seams": "scripts/recipes/egg-tomato-seams.json",
+  "seamRadius": 0.047,
+  "splitX": -0.002,
+  "occludedInteriorRadius": 0.039,
+  "radialVisibilityTolerance": 0.001,
+  "minimumComponentArea": 0.000002,
+  "output": "artifacts/blender/reference-export",
+  "blendOutput": "artifacts/blender/menu-reference-assembly.blend",
+  "layers": [
+    { "id": "bottom-bun", "upper": "bottomBunEgg", "baseTrim": 0.0004, "texture": "artifacts/blender/bread-crumb-source.png", "textureSize": [0.125,0.125], "offset": [0,0,0], "roughness": 0.85, "relief": 0.00012 },
+    { "id": "egg", "lower": "bottomBunEgg", "upper": "eggTomato", "texture": "artifacts/blender/egg-surface.png", "textureSize": [0.146,0.146], "offset": [0,0,0.036], "roughness": 0.58, "relief": 0.00008, "underside": {"uvCenter": [0.30,0.57], "uvScale": [0.28,0.38]} },
+    { "id": "tomato", "lower": "eggTomato", "upper": "tomatoTopBun", "texture": "artifacts/blender/tomato-baked.png", "roughness": 0.5, "interiorRoughness": 0.68, "relief": 0, "uvDiskRadius": 0.42, "rindUV": [0.83,0.51], "smoothInterior": 12,
+      "completion": {"blend": "artifacts/blender/menu-ingredientes-cerrados.blend", "object": "tomato"},
+      "colorOwnership": {"hueMaxDeg": 19, "saturationMin": 0.45, "fallback": "egg", "upperFallback": "top-bun"},
+      "pieces": [
+        { "id": "tomato-left", "half": "left", "center": [-0.02756,0.01227], "textureSize": [0.081,0.112], "offset": [-0.017,0,0.071], "completion": {"diameter": 0.0638, "thickness": 0.006, "centerZ": 0.02065, "slope": [-0.07433,0.08729]} },
+        { "id": "tomato-right", "half": "right", "center": [0.0217,0.00238], "textureSize": [0.086,0.112], "offset": [0.017,0,0.071], "completion": {"diameter": 0.0694, "thickness": 0.0084, "centerZ": 0.01998, "slope": [0.0692,0.02016]} }
+      ]
+    },
+    { "id": "top-bun", "lower": "tomatoTopBun", "texture": "artifacts/blender/bread-crumb-source.png", "textureSize": [0.125,0.125], "offset": [0,0,0.106], "roughness": 0.85, "relief": 0.00012 }
+  ]
+}

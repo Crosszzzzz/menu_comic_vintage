@@ -1,0 +1,31 @@
+{
+  "id": "croissant",
+  "name": "Croissant de mantequilla",
+  "category": "Postres",
+  "description": "Hojaldre de mantequilla, dorado por fuera y en capas por dentro.",
+  "ingredients": [
+    "Harina",
+    "Mantequilla",
+    "Levadura"
+  ],
+  "price": 15,
+  "art": "pastry",
+  "dimensions": {
+    "widthCm": 12,
+    "depthCm": 5,
+    "heightCm": 4.5
+  },
+  "allergenNote": "Contiene gluten, lácteos y huevo. Puede contener trazas de frutos secos.",
+  "poster": "/images/croissant.webp",
+  "badge": "En 3D · AR",
+  "viewer": {
+    "model": "/models/croissant/model.glb",
+    "ios": {
+      "assembled": "/models/croissant/model.usdz"
+    },
+    "labels": {
+      "assembledCaption": "TU CROISSANT EN 360°"
+    },
+    "alt": "Croissant de mantequilla recién horneado. Arrastra para girarlo y pellizca para acercarte."
+  }
+}

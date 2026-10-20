@@ -1,92 +1,88 @@
 import { useRef, useState } from 'react'
-import { ArrowDown, ArrowUpRight, Box, Egg, ScanLine, Wheat } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
-import { DishDialog, type ViewerIntent } from '@/components/dish-dialog'
-import { InfoDialog } from '@/components/info-dialog'
-import { restaurant, signatureDish as dish, formatPrice } from '@/data/menu'
+import { Box } from 'lucide-react'
+import { ALL_CATEGORIES, CategoryNav } from '@/components/category-nav'
+import { MenuHeader } from '@/components/menu-header'
+import { MenuSection } from '@/components/menu-section'
+import { ProductSheet } from '@/components/product-sheet'
+import { categories, dishesOf, modelledCount, restaurant, type Dish } from '@/data/menu'
 
-function TomatoDrawing() {
-  return <svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true"><path d="M16 10C6 5 1 15 7 24c4 5 14 5 18-1 6-9 0-17-9-13Z" /><path d="m10 8 6 5 6-5-6 2V4m0 9-4 4m4-4 4 4" strokeLinecap="round" /></svg>
+function Masthead() {
+  return (
+    <section className="masthead" aria-labelledby="menu-title">
+      <div className="masthead-copy">
+        <p className="eyebrow">CAFÉ DE BARRIO · CARTA</p>
+        <h1 id="menu-title">La <em>carta.</em></h1>
+        <p className="masthead-note">
+          Toca un producto para verlo en 3D, revisar sus ingredientes y su precio. En el móvil también puedes ponerlo
+          sobre tu mesa.
+        </p>
+        <p className="masthead-meta">
+          <Box size={15} aria-hidden="true" />
+          {modelledCount} {modelledCount === 1 ? 'producto' : 'productos'} en 3D y AR
+          <span aria-hidden="true">·</span>
+          {categories.length} secciones
+        </p>
+      </div>
+      <div className="masthead-stamp" aria-hidden="true">
+        <span>GIRA<br />MIRA<br />PIDE</span>
+      </div>
+    </section>
+  )
 }
 
 export default function App() {
-  const [viewerOpen, setViewerOpen] = useState(false)
-  const [intent, setIntent] = useState<ViewerIntent>('3d')
-  const [imageFailed, setImageFailed] = useState(false)
+  const [active, setActive] = useState<string>(ALL_CATEGORIES)
+  const [selected, setSelected] = useState<Dish | null>(null)
+  const [sheetOpen, setSheetOpen] = useState(false)
   const returnFocusTo = useRef<HTMLElement | null>(null)
 
-  function openDish(nextIntent: ViewerIntent, trigger: HTMLElement) {
+  const sections = active === ALL_CATEGORIES ? categories : categories.filter(category => category.label === active)
+
+  function openProduct(dish: Dish, trigger: HTMLButtonElement) {
     returnFocusTo.current = trigger
-    setIntent(nextIntent)
-    setViewerOpen(true)
+    setSelected(dish)
+    setSheetOpen(true)
+  }
+
+  function changeFilter(next: string) {
+    if (next === active) return
+    setActive(next)
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' })
   }
 
   return (
     <>
-      <a className="skip-link" href="#menu">Ir al menú</a>
+      <a className="skip-link" href="#carta">Ir a la carta</a>
       <div className="site-shell">
-        <header className="site-header">
-          <a className="wordmark" href="#" aria-label="Mesa, inicio">{restaurant.name}</a>
-          <p className="header-tagline">{restaurant.tagline}</p>
-          <InfoDialog />
-        </header>
+        <MenuHeader />
 
-        <main id="menu">
-          <section className="menu-intro" aria-labelledby="menu-title">
-            <div>
-              <p className="eyebrow intro-eyebrow">HECHO PARA DISFRUTAR</p>
-              <h1 id="menu-title">La <em>carta.</em></h1>
-            </div>
-            <p className="intro-aside">Algo rico.<br />Desde todos los ángulos.<ArrowDown size={19} strokeWidth={1.4} aria-hidden="true" /></p>
-          </section>
+        <main id="carta">
+          <Masthead />
+          <CategoryNav active={active} onChange={changeFilter} />
 
-          <div className="section-rule"><p>DE NUESTRA COCINA</p><span>01 / SÁNDWICHES</span></div>
-
-          <article className="featured-dish" aria-labelledby="dish-title">
-            <button className="dish-visual" onClick={(event) => openDish('3d', event.currentTarget)} aria-label="Explorar el sándwich de huevo y tomate en 3D">
-              <span className="visual-number">01<span> / </span></span>
-              <span className="visual-note">HUEVO, TOMATE.<br />Y UN BUEN PAN.</span>
-              <span className="hero-pop" aria-hidden="true">¡ÑAM!</span>
-              <span className="dish-halo" aria-hidden="true" />
-              {imageFailed ? <span className="image-fallback"><Egg size={68} strokeWidth={1} /><span>Sándwich de huevo y tomate</span></span> : <img className="dish-image" src={dish.poster} alt="Sándwich de huevo y tomate, capturado en 3D" width="1200" height="1000" fetchPriority="high" onError={() => setImageFailed(true)} />}
-              <span className="visual-bottom"><span><Box size={17} strokeWidth={1.5} aria-hidden="true" /> MÍRALO EN 360°</span><span className="visual-arrow"><ArrowUpRight size={23} strokeWidth={1.5} aria-hidden="true" /></span></span>
-            </button>
-
-            <div className="dish-copy">
-              <p className="eyebrow category">01 / {dish.category.toUpperCase()}</p>
-              <h2 id="dish-title">Huevo, tomate<br /><em>y buen pan.</em></h2>
-              <p className="dish-description">{dish.description}</p>
-              <p className="price-note">{formatPrice(dish.price, dish.currency)}</p>
-
-              <div className="ingredient-line" aria-label="Ingredientes principales">
-                <span><Egg size={24} strokeWidth={1.3} aria-hidden="true" />Huevo</span>
-                <span><TomatoDrawing />Tomate</span>
-                <span><Wheat size={25} strokeWidth={1.3} aria-hidden="true" />Pan</span>
-              </div>
-
-              <div className="dish-actions">
-                <Button className="primary-button explore-button" onClick={(event) => openDish('3d', event.currentTarget)}>Explorar en 3D<ArrowUpRight size={19} /></Button>
-                <Button variant="ghost" className="table-link" onClick={(event) => openDish('ar', event.currentTarget)}><ScanLine size={18} />Ver en mi mesa</Button>
-              </div>
-              <Accordion type="single" collapsible className="menu-allergens">
-                <AccordionItem value="allergens">
-                  <AccordionTrigger>Ingredientes y alérgenos</AccordionTrigger>
-                  <AccordionContent>{dish.allergenNote}</AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </div>
-          </article>
-
-          <section className="perspective-note" aria-label="Sobre la experiencia">
-            <p>Antes del primer bocado.<br /><em>Míralo de cerca.</em></p>
-            <span>Gira el plato. Acércate.<br />Descubre lo que vas a pedir.</span>
-          </section>
+          {sections.map(category => (
+            <MenuSection
+              key={category.label}
+              category={category}
+              index={categories.findIndex(item => item.label === category.label) + 1}
+              items={dishesOf(category.label)}
+              onOpen={openProduct}
+            />
+          ))}
         </main>
 
-        <footer className="site-footer"><span>mesa<span className="footer-dot">·</span>Un lugar en tu mesa.</span><span>Buen provecho.</span></footer>
+        <footer className="site-footer">
+          <p>
+            <span className="footer-brand">{restaurant.name}</span>
+            <span className="footer-dot" aria-hidden="true">·</span>
+            {restaurant.claim}
+          </p>
+          <p className="footer-note">Los modelos 3D y el tamaño en AR son aproximados. Buen provecho.</p>
+        </footer>
       </div>
-      <DishDialog open={viewerOpen} intent={intent} onOpenChange={setViewerOpen} returnFocusTo={returnFocusTo} />
+
+      <ProductSheet dish={selected} open={sheetOpen} onOpenChange={setSheetOpen} returnFocusTo={returnFocusTo} />
     </>
   )
 }

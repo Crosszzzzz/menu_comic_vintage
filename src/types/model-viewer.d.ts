@@ -7,6 +7,7 @@ declare module 'react' {
       'model-viewer': DetailedHTMLProps<HTMLAttributes<ModelViewerElement>, ModelViewerElement> & {
         src?: string
         'ios-src'?: string
+        'animation-name'?: string
         alt?: string
         poster?: string
         ar?: boolean

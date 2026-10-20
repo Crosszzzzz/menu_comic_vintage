@@ -1,0 +1,31 @@
+{
+  "id": "cheesecake-caramelo",
+  "name": "Cheesecake de caramelo",
+  "category": "Postres",
+  "description": "Queso crema horneado, caramelo y base de galleta.",
+  "ingredients": [
+    "Queso crema",
+    "Caramelo",
+    "Galleta"
+  ],
+  "price": 26,
+  "art": "pastry",
+  "dimensions": {
+    "widthCm": 10,
+    "depthCm": 6,
+    "heightCm": 3.7
+  },
+  "allergenNote": "Contiene gluten, lácteos y huevo.",
+  "poster": "/images/cheesecake-caramelo.webp",
+  "badge": "En 3D · AR",
+  "viewer": {
+    "model": "/models/cheesecake-caramelo/model.glb",
+    "ios": {
+      "assembled": "/models/cheesecake-caramelo/model.usdz"
+    },
+    "labels": {
+      "assembledCaption": "TU PORCIÓN EN 360°"
+    },
+    "alt": "Porción de cheesecake de caramelo con base de galleta. Arrastra para girarla y pellizca para acercarte."
+  }
+}

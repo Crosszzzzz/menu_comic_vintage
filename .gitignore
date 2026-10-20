@@ -8,3 +8,21 @@ playwright-report/
 
 .vercel
 *.log
+.pnpm-store/
+artifacts/blender/source/
+artifacts/blender/export/
+artifacts/blender/export-v2/
+artifacts/blender/reference-export/
+artifacts/blender/*.blend1
+
+# Scanned sources and intermediate exports: the app only ships the compressed
+# per-product assets in public/models/<producto>/.
+public/models/postres/
+public/models/clean/
+public/models/v2/
+public/models/v3/
+public/models/v4/
+public/models/*.zip
+public/models/egg-tomato.glb
+public/models/egg-tomato.usdz
+public/models/egg-tomato.meta.json

@@ -8,10 +8,13 @@
     "dev": "vite --host 0.0.0.0",
     "build": "tsc -b && vite build",
     "preview": "vite preview --host 0.0.0.0",
-    "assets:build": "node scripts/prepare-model.mjs",
+    "assets:build": "node scripts/build-dish.mjs",
+    "assets:desserts": "node scripts/build-desserts.mjs",
     "assets:poster": "node scripts/render-poster.mjs",
-    "check:ui": "node scripts/check-menu.mjs",
-    "assets:ios": "node scripts/prepare-ios.mjs"
+    "check:ui": "node scripts/verify-dish-config.mjs && node scripts/verify-dish-interactions.mjs",
+    "check:hover": "node scripts/verify-hover.mjs",
+    "check:menu": "node scripts/check-menu.mjs",
+    "assets:ios": "node scripts/export-food-ios.mjs"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

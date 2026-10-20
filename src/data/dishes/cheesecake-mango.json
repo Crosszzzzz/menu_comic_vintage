@@ -1,0 +1,31 @@
+{
+  "id": "cheesecake-mango",
+  "name": "Cheesecake de mango",
+  "category": "Postres",
+  "description": "Base de galleta, crema de queso y una capa de mango maduro.",
+  "ingredients": [
+    "Queso crema",
+    "Mango",
+    "Galleta"
+  ],
+  "price": 26,
+  "art": "pastry",
+  "dimensions": {
+    "widthCm": 10,
+    "depthCm": 5.4,
+    "heightCm": 3.6
+  },
+  "allergenNote": "Contiene gluten, lácteos y huevo.",
+  "poster": "/images/cheesecake-mango.webp",
+  "badge": "En 3D · AR",
+  "viewer": {
+    "model": "/models/cheesecake-mango/model.glb",
+    "ios": {
+      "assembled": "/models/cheesecake-mango/model.usdz"
+    },
+    "labels": {
+      "assembledCaption": "TU CHEESECAKE EN 360°"
+    },
+    "alt": "Porción de cheesecake de mango con base de galleta. Arrastra para girarla y pellizca para acercarte."
+  }
+}

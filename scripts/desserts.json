@@ -1,0 +1,11 @@
+[
+  { "source": "apple_pie.glb", "slug": "pay-manzana", "widthCm": 11, "tris": 24000 },
+  { "source": "croissant_2.glb", "slug": "croissant", "widthCm": 12, "tris": 24000 },
+  { "source": "mango_cake.glb", "slug": "cheesecake-mango", "widthCm": 10, "tris": 20000 },
+  { "source": "opera_cake.glb", "slug": "torta-princesa", "widthCm": 9, "tris": 20000 },
+  { "source": "piece_of_cake.glb", "slug": "cheesecake-caramelo", "widthCm": 10, "tris": 20000 },
+  { "source": "vanilla_custard_beignet.glb", "slug": "profiterol-vainilla", "widthCm": 8, "tris": 20000 },
+  { "source": "coffee_cup (1).glb", "slug": "capuchino", "widthCm": 12, "tris": 16000 },
+  { "source": "coffee_cup.glb", "slug": "americano", "widthCm": 10, "tris": 20000 },
+  { "source": "cup_of_coffee.glb", "slug": "cafe-pasado", "widthCm": 13, "tris": 16000 }
+]

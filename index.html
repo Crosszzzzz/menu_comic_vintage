@@ -4,39 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f6ead3" />
-    <meta name="description" content="Descubre la carta de Mesa en estilo comic vintage. Explora tu plato en 3D y miralo sobre tu mesa con realidad aumentada." />
+    <meta name="description" content="Carta de Botana, café de barrio. Mira cada producto de cerca y ponlo sobre tu mesa con realidad aumentada." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Mesa — La carta en viñetas</title>
+    <title>Botana — La carta en 3D</title>
     <script>
-      // Modo oscuro opcional: la primera visita sigue el sistema; después se recuerda la elección del botón.
+      // Theme falls back to the system preference; the header toggle persists a choice.
       (function () {
-        var d = document.documentElement, K = 'mesa-theme', t = null
+        var d = document.documentElement, K = 'botana-theme', t = null
         try { t = localStorage.getItem(K) } catch (e) {}
         if (t !== 'dark' && t !== 'light') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-        var dark = t === 'dark'
-        d.classList.toggle('dark', dark)
-        var m = document.querySelector('meta[name="theme-color"]')
-        function paint() { if (m) m.content = dark ? '#16120c' : '#f6ead3' }
-        paint()
-        function place() {
-          var h = document.querySelector('.site-header')
-          if (!h || document.getElementById('theme-toggle')) return
-          var b = document.createElement('button')
-          b.id = 'theme-toggle'; b.className = 'theme-toggle'; b.type = 'button'
-          b.title = 'Modo claro / oscuro'
-          b.setAttribute('aria-label', 'Cambiar entre modo claro y oscuro')
-          b.innerHTML = '<span class="tg-moon" aria-hidden="true">🌙</span><span class="tg-sun" aria-hidden="true">☀️</span>'
-          b.addEventListener('click', function () {
-            dark = d.classList.toggle('dark')
-            paint()
-            try { localStorage.setItem(K, dark ? 'dark' : 'light') } catch (e) {}
-          })
-          h.appendChild(b)
-        }
-        place()
-        new MutationObserver(function () {
-          if (!document.getElementById('theme-toggle')) place()
-        }).observe(d, { childList: true, subtree: true })
+        d.classList.toggle('dark', t === 'dark')
       })()
     </script>
   </head>
